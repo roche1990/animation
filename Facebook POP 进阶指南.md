@@ -219,7 +219,8 @@ case UIGestureRecognizerStateChanged: {
   self.popCircle.center = center;   
   [pan setTranslation:CGPointZero inView:self.popCircle];   
   break; 
-} case UIGestureRecognizerStateEnded: 
+} 
+case UIGestureRecognizerStateEnded: 
 case UIGestureRecognizerStateCancelled: {   
   CGPoint velocity = [pan velocityInView:self.view];   
   [self addDecayPositionAnimationWithVelocity:velocity];   
@@ -231,7 +232,7 @@ case UIGestureRecognizerStateCancelled: {
 
 ```objective-c
 POPDecayAnimation *anim = [POPDecayAnimation animationWithPropertyNamed:kPOPLayerPosition]; 
-anim.velocity = [NSValue valueWithCGPoint:CGPointMake(velocity.x, velocity.y)]; 复制代码
+anim.velocity = [NSValue valueWithCGPoint:CGPointMake(velocity.x, velocity.y)]; 
 ```
 
 当用户松开手之后，冰壶会依照地球的重力在低摩擦的状态下前进逐渐停止。如果想增大摩擦力，你可以把速率乘以一个摩擦系数。
@@ -251,7 +252,7 @@ POPSpringAnimation *anim = [POPSpringAnimation animationWithPropertyNamed:kPOPLa
 anim.fromValue = @-200; 
 anim.toValue = @(self.view.center.y);  
 POPBasicAnimation *opacityAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerOpacity]; opacityAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]; opacityAnim.toValue = @1.0;  
-POPBasicAnimation *rotationAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation]; rotationAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]; rotationAnim.beginTime = CACurrentMediaTime() + 0.1; rotationAnim.toValue = @(0); 复制代码
+POPBasicAnimation *rotationAnim = [POPBasicAnimation animationWithPropertyNamed:kPOPLayerRotation]; rotationAnim.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]; rotationAnim.beginTime = CACurrentMediaTime() + 0.1; rotationAnim.toValue = @(0); 
 ```
 
 首先把我们的冰壶变成卡片，旋转一点角度。这里需要注意的是，我们使用了 duration 来定义了 Basic Animation 的执行时间，beginTime 来定义了动画的开始时间。beginTime 接受的是一个以秒为单位的时间，所以我们使用了 CACurrentMediaTime() 获取了当前时间，然后加上了延迟时间。
@@ -286,7 +287,7 @@ boundsAnim.completionBlock = ^(POPAnimation *anim, BOOL finished) {
       if (finished) {UIGraphicsEndImageContext();}};        
     [progressLayer pop_addAnimation:progressBoundsAnim forKey:@"AnimateBounds"];    
   }  
-}; 复制代码
+}; 
 ```
 
 首先是一起进行的 scale 和 bounds 的变化效果，播放按钮将缩小然后改变外形成为进度条的容器，在变形结束后，我们触发进度条的动画。
