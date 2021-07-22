@@ -1,6 +1,6 @@
 
 
-![img](IMG/Facebook POP 进阶指南/8370_140704150536_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704150536_1.png" alt="20210612081214" style="zoom:50%;" />
 
 本文转自[Kevin Blog](http://imkevin.me/post/87976758784/facebook-pop)
 
@@ -32,7 +32,7 @@ POP 使用 Objective-C++ 编写，Objective-C++ 是对 C++ 的扩展，就像 Ob
 
 POP 目前由四部分组成：1. Animations；2. Engine；3. Utility；4. WebCore。
 
- ![img](IMG/Facebook POP 进阶指南/8370_140704145014_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704145014_1.png" alt="20210612081214" style="zoom:50%;" />
 
 POP 动画极为流畅，其秘密就在于这个 Engine 中的POPAnimator 里，POP 通过 CADisplayLink 高达 60 FPS 的特性，打造了一个游戏级的动画引擎。
 
@@ -70,11 +70,11 @@ POPAnimation 有着和 CALayer 非常相似的 API。如果你知道 CALayer 的
 
 ease-in ease-out 这些可能你已经非常熟悉，这是动画的动作标配了，不过 POP 觉得只是这样显然太无聊，提供了两个非常不同于其的动画模式，第一个就是 Spring Animation。
 
-![img](IMG/Facebook POP 进阶指南/8370_140704145158_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704145158_1.png" alt="20210612081214" style="zoom:80%;" />
 
 Spring Animation 由诸多的复杂参数来控制，展现了一个非常风骚的姿势。
 
-![img](IMG/Facebook POP 进阶指南/8370_140704145215_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704145215_1.png" alt="20210612081214" style="zoom:50%;" />
 
 \* Bounciness 反弹－影响动画作用的参数的变化幅度
 
@@ -153,7 +153,7 @@ deceleration （负加速度） 是一个你会很少用到的值，默认是就
 
 POP 号称可以对物体的任何属性进行动画，其背后就是这个 Property Animation驱动。Spring Animation 和 Decay Animation 都是继承自这个类，接下来我们通过一个 Counting Label 的例子来展现这个神奇的能力。
 
-![img](IMG/Facebook POP 进阶指南/8370_140704145346_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704145346_1.png" alt="20210612081214" style="zoom:50%;" />
 
 与此同时我们也使用了 Basic Animation，经典的 ease－in－out 此刻发挥了重要的作用，因为我们并不需要计数器的数值进行回弹。
 
@@ -242,7 +242,7 @@ anim.velocity = [NSValue valueWithCGPoint:CGPointMake(velocity.x, velocity.y)]; 
 
 在这个实例中，我们介绍下如何结合两个动画。实现一个像 Path 的卡片飞入的效果。
 
-![img](IMG/Facebook POP 进阶指南/8370_140704145514_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704145514_1.png" alt="20210612081214" style="zoom:50%;" />
 
 同样保留了 Decay Move 的效果，你可以甩走这张卡片。
 
@@ -262,7 +262,7 @@ POPBasicAnimation *rotationAnim = [POPBasicAnimation animationWithPropertyNamed:
 
 这个实例是真的酷极了的效果，我们将实现一个用户点击后播放按钮转换为进度条容器的变形效果。
 
-![img](IMG/Facebook POP 进阶指南/8370_140704145601_1.png)
+<img src="IMG/Facebook POP 进阶指南/8370_140704145601_1.png" alt="20210612081214" style="zoom:50%;" />
 
 首先我们创建一个进度条，这个真是我最拿手的事情了。通过 lineCap lineWidth 我们调整进度条的样式，然后使用 UIBezierPath 定义了进度条的走向。
 
